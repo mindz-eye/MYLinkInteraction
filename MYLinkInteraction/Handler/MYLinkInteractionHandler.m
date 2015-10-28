@@ -12,6 +12,7 @@
 #import "MYLinkInteractionAction.h"
 #import "UIAlertController+MYLinkInteraction.h"
 #import "UIViewController+MYHelpers.h"
+#import <SafariServices/SafariServices.h>
 
 @implementation MYLinkInteractionHandler
 
@@ -87,8 +88,12 @@
         [actions addObjectsFromArray:@[sendMail, addContact]];
     } else {
         MYLinkInteractionAction *open = [MYDefaultActionsFactory openURLActionWithURL:URL];
-        MYLinkInteractionAction *addToReadingList = [MYDefaultActionsFactory addToReadingListActionWithURL:URL];
-        [actions addObjectsFromArray:addToReadingList ? @[open, addToReadingList] : @[open]];
+        [actions addObject:open];
+        
+        if ([SSReadingList supportsURL:URL]) {
+            MYLinkInteractionAction *addToReadingList = [MYDefaultActionsFactory addToReadingListActionWithURL:URL];
+            [actions addObject:addToReadingList];
+        }
     }
     MYLinkInteractionAction *copy = [MYDefaultActionsFactory copyActionWithURL:URL];
     [actions addObject:copy];
@@ -107,8 +112,8 @@
 - (NSArray<MYLinkInteractionAction *> *)actionsForPhoneNumber:(NSString *)phoneNumber {
     NSMutableArray *actions = [NSMutableArray array];
     
-    MYLinkInteractionAction *call = [MYDefaultActionsFactory callActionWithPhoneNumber:phoneNumber];
-    if (call) {
+    if ([[[UIDevice currentDevice] model] isEqualToString:@"iPhone"]) {
+        MYLinkInteractionAction *call = [MYDefaultActionsFactory callActionWithPhoneNumber:phoneNumber];
         [actions addObject:call];
     }
     MYLinkInteractionAction *faceTime = [MYDefaultActionsFactory faceTimeAudioActionWithPhoneNumber:phoneNumber];
@@ -117,7 +122,7 @@
     MYLinkInteractionAction *copy = [MYDefaultActionsFactory copyActionWithText:phoneNumber];
     
     [actions addObjectsFromArray:@[faceTime, message, addContact, copy]];
-    return [actions copy]; 
+    return [actions copy];
 }
 
 - (NSArray<MYLinkInteractionAction *> *)actionsForDate:(NSDate *)date dateString:(NSString *)dateString {

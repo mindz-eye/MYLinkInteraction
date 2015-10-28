@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MYDefaultActionsFactory : NSObject
 
 + (MYLinkInteractionAction *)openURLActionWithURL:(NSURL *)URL;
-+ (nullable MYLinkInteractionAction *)addToReadingListActionWithURL:(NSURL *)URL;
++ (MYLinkInteractionAction *)addToReadingListActionWithURL:(NSURL *)URL;
 + (MYLinkInteractionAction *)copyActionWithURL:(NSURL *)URL;
 
 + (MYLinkInteractionAction *)openInMapsActionWithAddressComponents:(NSDictionary *)addressComponents;
@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (MYLinkInteractionAction *)mailMessageActionWithEmail:(NSString *)email;
 + (MYLinkInteractionAction *)addContactActionWithEmail:(NSString *)email;
 
-+ (nullable MYLinkInteractionAction *)callActionWithPhoneNumber:(NSString *)phoneNumber;
++ (MYLinkInteractionAction *)callActionWithPhoneNumber:(NSString *)phoneNumber;
 + (MYLinkInteractionAction *)faceTimeAudioActionWithPhoneNumber:(NSString *)phoneNumber;
 + (MYLinkInteractionAction *)textMessageActionWithPhoneNumber:(NSString *)phoneNumber;
 + (MYLinkInteractionAction *)addContactActionWithPhoneNumber:(NSString *)phoneNumber;

@@ -9,7 +9,6 @@
 #import "MYDefaultActionsFactory.h"
 #import "MYLinkInteractionAction.h"
 #import "MYLinkInteractionCommands.h"
-#import <SafariServices/SafariServices.h>
 
 @implementation MYDefaultActionsFactory
 
@@ -20,12 +19,9 @@
 }
 
 + (MYLinkInteractionAction *)addToReadingListActionWithURL:(NSURL *)URL {
-    if ([SSReadingList supportsURL:URL]) {
-        return [MYLinkInteractionAction actionWithTitle:NSLocalizedString(@"Add to Reading List", nil) handler:^{
-            [MYLinkInteractionCommands addURLToReadingList:URL];
-        }];
-    }
-    return nil;
+    return [MYLinkInteractionAction actionWithTitle:NSLocalizedString(@"Add to Reading List", nil) handler:^{
+        [MYLinkInteractionCommands addURLToReadingList:URL];
+    }];
 }
 
 + (MYLinkInteractionAction *)copyActionWithURL:(NSURL *)URL {
@@ -64,13 +60,10 @@
     }];
 }
 
-+ (nullable MYLinkInteractionAction *)callActionWithPhoneNumber:(NSString *)phoneNumber {
-    if ([[[UIDevice currentDevice] model] isEqualToString:@"iPhone"]) {
-        return [MYLinkInteractionAction actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Call %@", nil), phoneNumber] handler:^{
-            [MYLinkInteractionCommands callWithPhoneNumber:phoneNumber];
-        }];
-    }
-    return nil;
++ (MYLinkInteractionAction *)callActionWithPhoneNumber:(NSString *)phoneNumber {
+    return [MYLinkInteractionAction actionWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Call %@", nil), phoneNumber] handler:^{
+        [MYLinkInteractionCommands callWithPhoneNumber:phoneNumber];
+    }];
 }
 
 + (MYLinkInteractionAction *)faceTimeAudioActionWithPhoneNumber:(NSString *)phoneNumber {
