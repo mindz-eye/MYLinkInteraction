@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F325A361BE14F8C005B19CF /* MYLinkInteraction.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0F325A351BE14F8C005B19CF /* MYLinkInteraction.h */; };
+		0F325A531BE14FF9005B19CF /* MYLinkInteractionHandler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0F325A461BE14FD3005B19CF /* MYLinkInteractionHandler.h */; };
+		0F325A541BE14FFB005B19CF /* MYLinkInteractionAction.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0F325A421BE14FD3005B19CF /* MYLinkInteractionAction.h */; };
+		0F325A551BE14FFE005B19CF /* MYLinkInteractionCommands.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0F325A441BE14FD3005B19CF /* MYLinkInteractionCommands.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0F325A301BE14F8C005B19CF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				0F325A361BE14F8C005B19CF /* MYLinkInteraction.h in CopyFiles */,
+				0F325A531BE14FF9005B19CF /* MYLinkInteractionHandler.h in CopyFiles */,
+				0F325A541BE14FFB005B19CF /* MYLinkInteractionAction.h in CopyFiles */,
+				0F325A551BE14FFE005B19CF /* MYLinkInteractionCommands.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0F325A321BE14F8C005B19CF /* libMYLinkInteraction.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMYLinkInteraction.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F325A351BE14F8C005B19CF /* MYLinkInteraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYLinkInteraction.h; sourceTree = "<group>"; };
+		0F325A401BE14FD3005B19CF /* MYDefaultActionsFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYDefaultActionsFactory.h; sourceTree = "<group>"; };
+		0F325A411BE14FD3005B19CF /* MYDefaultActionsFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYDefaultActionsFactory.m; sourceTree = "<group>"; };
+		0F325A421BE14FD3005B19CF /* MYLinkInteractionAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYLinkInteractionAction.h; sourceTree = "<group>"; };
+		0F325A431BE14FD3005B19CF /* MYLinkInteractionAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYLinkInteractionAction.m; sourceTree = "<group>"; };
+		0F325A441BE14FD3005B19CF /* MYLinkInteractionCommands.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYLinkInteractionCommands.h; sourceTree = "<group>"; };
+		0F325A451BE14FD3005B19CF /* MYLinkInteractionCommands.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYLinkInteractionCommands.m; sourceTree = "<group>"; };
+		0F325A461BE14FD3005B19CF /* MYLinkInteractionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYLinkInteractionHandler.h; sourceTree = "<group>"; };
+		0F325A471BE14FD3005B19CF /* MYLinkInteractionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYLinkInteractionHandler.m; sourceTree = "<group>"; };
+		0F325A491BE14FD3005B19CF /* MYAddressBookHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYAddressBookHelpers.h; sourceTree = "<group>"; };
+		0F325A4A1BE14FD3005B19CF /* MYAddressBookHelpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYAddressBookHelpers.m; sourceTree = "<group>"; };
+		0F325A4B1BE14FD3005B19CF /* UIAlertAction+MYLinkInteraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+MYLinkInteraction.h"; sourceTree = "<group>"; };
+		0F325A4C1BE14FD3005B19CF /* UIAlertAction+MYLinkInteraction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+MYLinkInteraction.m"; sourceTree = "<group>"; };
+		0F325A4D1BE14FD3005B19CF /* UIAlertController+MYLinkInteraction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+MYLinkInteraction.h"; sourceTree = "<group>"; };
+		0F325A4E1BE14FD3005B19CF /* UIAlertController+MYLinkInteraction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+MYLinkInteraction.m"; sourceTree = "<group>"; };
+		0F325A4F1BE14FD3005B19CF /* UIBarButtonItem+MYBlocksSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+MYBlocksSupport.h"; sourceTree = "<group>"; };
+		0F325A501BE14FD3005B19CF /* UIBarButtonItem+MYBlocksSupport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+MYBlocksSupport.m"; sourceTree = "<group>"; };
+		0F325A511BE14FD3005B19CF /* UIViewController+MYHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MYHelpers.h"; sourceTree = "<group>"; };
+		0F325A521BE14FD3005B19CF /* UIViewController+MYHelpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MYHelpers.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0F325A2F1BE14F8C005B19CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F325A291BE14F8C005B19CF = {
+			isa = PBXGroup;
+			children = (
+				0F325A341BE14F8C005B19CF /* MYLinkInteraction */,
+				0F325A331BE14F8C005B19CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0F325A331BE14F8C005B19CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0F325A321BE14F8C005B19CF /* libMYLinkInteraction.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0F325A341BE14F8C005B19CF /* MYLinkInteraction */ = {
+			isa = PBXGroup;
+			children = (
+				0F325A351BE14F8C005B19CF /* MYLinkInteraction.h */,
+				0F325A3F1BE14FD3005B19CF /* Handler */,
+				0F325A481BE14FD3005B19CF /* Utils */,
+			);
+			path = MYLinkInteraction;
+			sourceTree = "<group>";
+		};
+		0F325A3F1BE14FD3005B19CF /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				0F325A461BE14FD3005B19CF /* MYLinkInteractionHandler.h */,
+				0F325A471BE14FD3005B19CF /* MYLinkInteractionHandler.m */,
+				0F325A421BE14FD3005B19CF /* MYLinkInteractionAction.h */,
+				0F325A431BE14FD3005B19CF /* MYLinkInteractionAction.m */,
+				0F325A401BE14FD3005B19CF /* MYDefaultActionsFactory.h */,
+				0F325A411BE14FD3005B19CF /* MYDefaultActionsFactory.m */,
+				0F325A441BE14FD3005B19CF /* MYLinkInteractionCommands.h */,
+				0F325A451BE14FD3005B19CF /* MYLinkInteractionCommands.m */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		0F325A481BE14FD3005B19CF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0F325A491BE14FD3005B19CF /* MYAddressBookHelpers.h */,
+				0F325A4A1BE14FD3005B19CF /* MYAddressBookHelpers.m */,
+				0F325A4B1BE14FD3005B19CF /* UIAlertAction+MYLinkInteraction.h */,
+				0F325A4C1BE14FD3005B19CF /* UIAlertAction+MYLinkInteraction.m */,
+				0F325A4D1BE14FD3005B19CF /* UIAlertController+MYLinkInteraction.h */,
+				0F325A4E1BE14FD3005B19CF /* UIAlertController+MYLinkInteraction.m */,
+				0F325A4F1BE14FD3005B19CF /* UIBarButtonItem+MYBlocksSupport.h */,
+				0F325A501BE14FD3005B19CF /* UIBarButtonItem+MYBlocksSupport.m */,
+				0F325A511BE14FD3005B19CF /* UIViewController+MYHelpers.h */,
+				0F325A521BE14FD3005B19CF /* UIViewController+MYHelpers.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0F325A311BE14F8C005B19CF /* MYLinkInteraction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F325A3B1BE14F8C005B19CF /* Build configuration list for PBXNativeTarget "MYLinkInteraction" */;
+			buildPhases = (
+				0F325A2E1BE14F8C005B19CF /* Sources */,
+				0F325A2F1BE14F8C005B19CF /* Frameworks */,
+				0F325A301BE14F8C005B19CF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MYLinkInteraction;
+			productName = MYLinkInteraction;
+			productReference = 0F325A321BE14F8C005B19CF /* libMYLinkInteraction.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0F325A2A1BE14F8C005B19CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Makarov Yury";
+				TargetAttributes = {
+					0F325A311BE14F8C005B19CF = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = 0F325A2D1BE14F8C005B19CF /* Build configuration list for PBXProject "MYLinkInteraction" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0F325A291BE14F8C005B19CF;
+			productRefGroup = 0F325A331BE14F8C005B19CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0F325A311BE14F8C005B19CF /* MYLinkInteraction */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0F325A2E1BE14F8C005B19CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0F325A391BE14F8C005B19CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0F325A3A1BE14F8C005B19CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0F325A3C1BE14F8C005B19CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0F325A3D1BE14F8C005B19CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0F325A2D1BE14F8C005B19CF /* Build configuration list for PBXProject "MYLinkInteraction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F325A391BE14F8C005B19CF /* Debug */,
+				0F325A3A1BE14F8C005B19CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0F325A3B1BE14F8C005B19CF /* Build configuration list for PBXNativeTarget "MYLinkInteraction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F325A3C1BE14F8C005B19CF /* Debug */,
+				0F325A3D1BE14F8C005B19CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0F325A2A1BE14F8C005B19CF /* Project object */;
+}
