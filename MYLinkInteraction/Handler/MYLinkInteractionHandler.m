@@ -121,13 +121,13 @@
 }
 
 - (NSArray<MYLinkInteractionAction *> *)actionsForDate:(NSDate *)date dateString:(NSString *)dateString {
-    MYLinkInteractionAction *eventAction = [MYDefaultActionsFactory createEventActionWithDate:date];
+    MYLinkInteractionAction *eventAction = date.timeIntervalSinceNow > 0
+        ? [MYDefaultActionsFactory createEventActionWithDate:date] : nil;
     MYLinkInteractionAction *showDateAction = [MYDefaultActionsFactory showDateActionWithDate:date];
     MYLinkInteractionAction *copyAction = [MYDefaultActionsFactory copyActionWithText:dateString];
     
-    return @[eventAction, showDateAction, copyAction];
+    return eventAction ? @[eventAction, showDateAction, copyAction] : @[showDateAction, copyAction];
 }
-
 
 - (NSArray<MYLinkInteractionAction *> *)populateActionsForTextCheckingResult:(NSTextCheckingResult *)result linkText:(NSString *)linkText {
     NSArray<MYLinkInteractionAction *> *actions;
