@@ -147,7 +147,7 @@
 
 + (void)showDateInCalendar:(NSDate *)date {
     NSInteger interval = [date timeIntervalSinceReferenceDate];
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"calshow:%ld", interval]];
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"calshow:%@", @(interval)]];
     [[UIApplication sharedApplication] openURL:URL];
 }
 
