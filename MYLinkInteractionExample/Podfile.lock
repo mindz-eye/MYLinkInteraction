@@ -1,0 +1,22 @@
+PODS:
+  - MYLinkInteraction (0.1.0)
+  - TTTAttributedLabel (1.13.4)
+
+DEPENDENCIES:
+  - MYLinkInteraction (from `https://github.com/mindz-eye/MYLinkInteraction.git`)
+  - TTTAttributedLabel
+
+EXTERNAL SOURCES:
+  MYLinkInteraction:
+    :git: https://github.com/mindz-eye/MYLinkInteraction.git
+
+CHECKOUT OPTIONS:
+  MYLinkInteraction:
+    :commit: 34cc91cd4a612740714d16d06a4f9ec91ff85652
+    :git: https://github.com/mindz-eye/MYLinkInteraction.git
+
+SPEC CHECKSUMS:
+  MYLinkInteraction: 16d268a9e595d71747940a46402dd6684d4f229a
+  TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
+
+COCOAPODS: 0.38.2

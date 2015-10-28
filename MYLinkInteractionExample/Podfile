@@ -1,0 +1,10 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+target 'MYLinkInteractionExample' do
+
+pod 'MYLinkInteraction', :git => 'https://github.com/mindz-eye/MYLinkInteraction.git'
+pod 'TTTAttributedLabel'
+
+end
+
