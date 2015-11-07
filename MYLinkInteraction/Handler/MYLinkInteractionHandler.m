@@ -112,16 +112,19 @@
 - (NSArray<MYLinkInteractionAction *> *)actionsForPhoneNumber:(NSString *)phoneNumber {
     NSMutableArray *actions = [NSMutableArray array];
     
+#if !TARGET_IPHONE_SIMULATOR
     if ([[[UIDevice currentDevice] model] isEqualToString:@"iPhone"]) {
         MYLinkInteractionAction *call = [MYDefaultActionsFactory callActionWithPhoneNumber:phoneNumber];
         [actions addObject:call];
     }
     MYLinkInteractionAction *faceTime = [MYDefaultActionsFactory faceTimeAudioActionWithPhoneNumber:phoneNumber];
+    [actions addObject:faceTime];
+#endif
     MYLinkInteractionAction *message = [MYDefaultActionsFactory textMessageActionWithPhoneNumber:phoneNumber];
     MYLinkInteractionAction *addContact = [MYDefaultActionsFactory addContactActionWithPhoneNumber:phoneNumber];
     MYLinkInteractionAction *copy = [MYDefaultActionsFactory copyActionWithText:phoneNumber];
     
-    [actions addObjectsFromArray:@[faceTime, message, addContact, copy]];
+    [actions addObjectsFromArray:@[message, addContact, copy]];
     return [actions copy];
 }
 
