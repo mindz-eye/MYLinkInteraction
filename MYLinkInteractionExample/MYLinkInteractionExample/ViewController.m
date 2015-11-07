@@ -49,25 +49,40 @@
                                    (NSString *)kTTTBackgroundCornerRadiusAttributeName: @(5)};
 }
 
-- (MYPopoverPresentationContext *)popoverContextForLabel:(TTTAttributedLabel *)label {
-    MYPopoverPresentationContext *context = [MYPopoverPresentationContext new];
-    context.sourceView = label;
-    context.sourceRect = label.bounds;
-    return context;
-}
-
 #pragma mark - TTTAttributedLabelDelegate
 
 - (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithTextCheckingResult:(NSTextCheckingResult *)result {
     MYLinkInteractionHandler *handler = [MYLinkInteractionHandler new];
     [handler handleLinkInteractionType:MYLinkInteractionTypePress linkText:label.text
-                    textCheckingResult:result popoverContext:[self popoverContextForLabel:label]];
+                    textCheckingResult:result popoverContext:[self popoverContextForLabel:label textCheckingResult:result]];
 }
 
 - (void)attributedLabel:(TTTAttributedLabel *)label didLongPressLinkWithTextCheckingResult:(NSTextCheckingResult *)result atPoint:(CGPoint)point {
     MYLinkInteractionHandler *handler = [MYLinkInteractionHandler new];
     [handler handleLinkInteractionType:MYLinkInteractionTypeLongPress linkText:label.text
-                    textCheckingResult:result popoverContext:[self popoverContextForLabel:label]];
+                    textCheckingResult:result popoverContext:[self popoverContextForLabel:label textCheckingResult:result]];
+}
+
+#pragma mark - Popover context
+
+- (CGRect)boundingRectForCharactersInRange:(NSRange)range ofAttributedString:(NSAttributedString *)attributedString inBounds:(CGRect)bounds {
+    NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:attributedString];
+    NSLayoutManager *layoutManager = [[NSLayoutManager alloc] init];
+    [textStorage addLayoutManager:layoutManager];
+    NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:bounds.size];
+    textContainer.lineFragmentPadding = 0;
+    [layoutManager addTextContainer:textContainer];
+    
+    NSRange glyphRange;
+    [layoutManager characterRangeForGlyphRange:range actualGlyphRange:&glyphRange];
+    return [layoutManager boundingRectForGlyphRange:glyphRange inTextContainer:textContainer];
+}
+
+- (MYPopoverPresentationContext *)popoverContextForLabel:(TTTAttributedLabel *)label textCheckingResult:(NSTextCheckingResult *)result {
+    MYPopoverPresentationContext *context = [MYPopoverPresentationContext new];
+    context.sourceView = label;
+    context.sourceRect = [self boundingRectForCharactersInRange:result.range ofAttributedString:label.attributedText inBounds:self.view.bounds];
+    return context;
 }
 
 @end
