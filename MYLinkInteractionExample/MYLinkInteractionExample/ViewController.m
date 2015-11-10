@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <MYLinkInteraction/MYLinkInteractionHandler.h>
+#import <MYLinkInteraction/MYLinkInteraction.h>
 #import <TTTAttributedLabel/TTTAttributedLabel.h>
 
 @interface ViewController () <TTTAttributedLabelDelegate>
@@ -53,14 +53,14 @@
 
 - (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithTextCheckingResult:(NSTextCheckingResult *)result {
     MYLinkInteractionHandler *handler = [MYLinkInteractionHandler new];
-    [handler handleLinkInteractionType:MYLinkInteractionTypePress linkText:label.text
-                    textCheckingResult:result popoverContext:[self popoverContextForLabel:label textCheckingResult:result]];
+    MYLinkData *linkData = [[MYLinkData alloc] initWithLinkText:label.text textCheckingResult:result];
+    [handler handlePressWithLinkData:linkData popoverContext:[self popoverContextForLabel:label textCheckingResult:result]];
 }
 
 - (void)attributedLabel:(TTTAttributedLabel *)label didLongPressLinkWithTextCheckingResult:(NSTextCheckingResult *)result atPoint:(CGPoint)point {
     MYLinkInteractionHandler *handler = [MYLinkInteractionHandler new];
-    [handler handleLinkInteractionType:MYLinkInteractionTypeLongPress linkText:label.text
-                    textCheckingResult:result popoverContext:[self popoverContextForLabel:label textCheckingResult:result]];
+    MYLinkData *linkData = [[MYLinkData alloc] initWithLinkText:label.text textCheckingResult:result];
+    [handler handleLongPressLinkData:linkData popoverContext:[self popoverContextForLabel:label textCheckingResult:result]];
 }
 
 #pragma mark - Popover context
@@ -79,10 +79,8 @@
 }
 
 - (MYPopoverPresentationContext *)popoverContextForLabel:(TTTAttributedLabel *)label textCheckingResult:(NSTextCheckingResult *)result {
-    MYPopoverPresentationContext *context = [MYPopoverPresentationContext new];
-    context.sourceView = label;
-    context.sourceRect = [self boundingRectForCharactersInRange:result.range ofAttributedString:label.attributedText inBounds:self.view.bounds];
-    return context;
+    CGRect sourceRect = [self boundingRectForCharactersInRange:result.range ofAttributedString:label.attributedText inBounds:self.view.bounds];
+    return [[MYPopoverPresentationContext alloc] initWithSourceView:label sourceRect:sourceRect];
 }
 
 @end
