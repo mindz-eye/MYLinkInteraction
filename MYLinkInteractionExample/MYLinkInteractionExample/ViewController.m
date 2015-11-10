@@ -60,7 +60,7 @@
 - (void)attributedLabel:(TTTAttributedLabel *)label didLongPressLinkWithTextCheckingResult:(NSTextCheckingResult *)result atPoint:(CGPoint)point {
     MYLinkInteractionHandler *handler = [MYLinkInteractionHandler new];
     MYLinkData *linkData = [[MYLinkData alloc] initWithLinkText:label.text textCheckingResult:result];
-    [handler handleLongPressLinkData:linkData popoverContext:[self popoverContextForLabel:label textCheckingResult:result]];
+    [handler handleLongPressWithLinkData:linkData popoverContext:[self popoverContextForLabel:label textCheckingResult:result]];
 }
 
 #pragma mark - Popover context

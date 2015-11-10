@@ -43,8 +43,7 @@
     }
 }
 
-- (void)handleLongPressLinkData:(MYLinkData *)linkData popoverContext:(MYPopoverPresentationContext *)popoverContext {
-    
+- (void)handleLongPressWithLinkData:(MYLinkData *)linkData popoverContext:(MYPopoverPresentationContext *)popoverContext {
     NSArray<MYLinkInteractionAction *> *actions = [self populateActionsForLinkData:linkData];
     UIAlertController *alert = [UIAlertController my_alertControllerForLinkInteractionActions:actions];
     [self presentAlertController:alert popoverContext:popoverContext];

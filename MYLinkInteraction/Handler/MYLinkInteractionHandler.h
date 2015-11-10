@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)handlePressWithLinkData:(MYLinkData *)linkData popoverContext:(nullable MYPopoverPresentationContext *)popoverContext;
 
-- (void)handleLongPressLinkData:(MYLinkData *)linkData popoverContext:(nullable MYPopoverPresentationContext *)popoverContext;
+- (void)handleLongPressWithLinkData:(MYLinkData *)linkData popoverContext:(nullable MYPopoverPresentationContext *)popoverContext;
 
 @end
 

@@ -53,7 +53,7 @@ In case with [TTTAttributedLabel](https://github.com/TTTAttributedLabel/TTTAttri
 - (void)attributedLabel:(TTTAttributedLabel *)label didLongPressLinkWithTextCheckingResult:(NSTextCheckingResult *)result atPoint:(CGPoint)point {
     MYLinkInteractionHandler *handler = [MYLinkInteractionHandler new];
     MYLinkData *linkData = [[MYLinkData alloc] initWithLinkText:label.text textCheckingResult:result];
-    [handler handleLongPressLinkData:linkData popoverContext:nil];
+    [handler handleLongPressWithLinkData:linkData popoverContext:nil];
 }
 ````
 
