@@ -33,7 +33,31 @@ pod 'MYLinkInteraction'
 
 ## Usage
 
-See example app
+Import all the things:
+
+````objective-c
+#import <MYLinkInteraction/MYLinkInteraction.h>
+````
+
+Assuming you already have a code which parses a link and gets NSTextCheckingResult. The usage is really simple then.
+
+In case with [TTTAttributedLabel](https://github.com/TTTAttributedLabel/TTTAttributedLabel):
+
+````objective-c
+- (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithTextCheckingResult:(NSTextCheckingResult *)result {
+    MYLinkInteractionHandler *handler = [MYLinkInteractionHandler new];
+    MYLinkData *linkData = [[MYLinkData alloc] initWithLinkText:label.text textCheckingResult:result];
+    [handler handlePressWithLinkData:linkData popoverContext:nil];
+}
+
+- (void)attributedLabel:(TTTAttributedLabel *)label didLongPressLinkWithTextCheckingResult:(NSTextCheckingResult *)result atPoint:(CGPoint)point {
+    MYLinkInteractionHandler *handler = [MYLinkInteractionHandler new];
+    MYLinkData *linkData = [[MYLinkData alloc] initWithLinkText:label.text textCheckingResult:result];
+    [handler handleLongPressLinkData:linkData popoverContext:nil];
+}
+````
+
+See example app for details.
 
 ## License
 
