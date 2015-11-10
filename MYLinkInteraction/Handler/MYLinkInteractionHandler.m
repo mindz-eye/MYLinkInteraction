@@ -16,23 +16,8 @@
 
 @implementation MYLinkInteractionHandler
 
-- (void)handleLinkInteractionType:(MYLinkInteractionType)type
-                         linkText:(NSString *)linkText
-               textCheckingResult:(NSTextCheckingResult *)result
-                   popoverContext:(nullable MYPopoverPresentationContext *)popoverContext {
-    
-    if (type == MYLinkInteractionTypePress) {
-        [self handlePressWithTextCheckingResult:result linkText:linkText popoverContext:popoverContext];
-    } else if (type == MYLinkInteractionTypeLongPress) {
-        [self handleLongPressWithTextCheckingResult:result linkText:linkText popoverContext:popoverContext];
-    } else {
-        @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                       reason:@"Unsupported interaction type" userInfo:nil];
-    }
-}
-
-- (void)handlePressWithTextCheckingResult:(NSTextCheckingResult *)result linkText:(NSString *)linkText
-                           popoverContext:(nullable MYPopoverPresentationContext *)popoverContext {
+- (void)handlePressWithLinkData:(MYLinkData *)linkData popoverContext:(MYPopoverPresentationContext *)popoverContext {
+    NSTextCheckingResult *result = linkData.checkingResult;
     
     switch (result.resultType) {
         case NSTextCheckingTypeLink:
@@ -48,7 +33,7 @@
             break;
             
         case NSTextCheckingTypeDate: {
-            NSArray<MYLinkInteractionAction *> *actions = [self populateActionsForTextCheckingResult:result linkText:linkText];
+            NSArray<MYLinkInteractionAction *> *actions = [self populateActionsForLinkData:linkData];
             UIAlertController *alert = [UIAlertController my_alertControllerForLinkInteractionActions:actions];
             [self presentAlertController:alert popoverContext:popoverContext];
             break;
@@ -58,10 +43,9 @@
     }
 }
 
-- (void)handleLongPressWithTextCheckingResult:(NSTextCheckingResult *)result linkText:(NSString *)linkText
-                               popoverContext:(nullable MYPopoverPresentationContext *)popoverContext {
+- (void)handleLongPressLinkData:(MYLinkData *)linkData popoverContext:(MYPopoverPresentationContext *)popoverContext {
     
-    NSArray<MYLinkInteractionAction *> *actions = [self populateActionsForTextCheckingResult:result linkText:linkText];
+    NSArray<MYLinkInteractionAction *> *actions = [self populateActionsForLinkData:linkData];
     UIAlertController *alert = [UIAlertController my_alertControllerForLinkInteractionActions:actions];
     [self presentAlertController:alert popoverContext:popoverContext];
 }
@@ -137,7 +121,9 @@
     return eventAction ? @[eventAction, showDateAction, copyAction] : @[showDateAction, copyAction];
 }
 
-- (NSArray<MYLinkInteractionAction *> *)populateActionsForTextCheckingResult:(NSTextCheckingResult *)result linkText:(NSString *)linkText {
+- (NSArray<MYLinkInteractionAction *> *)populateActionsForLinkData:(MYLinkData *)linkData {
+    NSTextCheckingResult *result = linkData.checkingResult;
+    
     NSArray<MYLinkInteractionAction *> *actions;
     
     switch (result.resultType) {
@@ -154,7 +140,7 @@
             break;
             
         case NSTextCheckingTypeDate:
-            actions = [self actionsForDate:result.date dateString:linkText];
+            actions = [self actionsForDate:result.date dateString:linkData.linkText];
             break;
             
         default:
@@ -167,8 +153,4 @@
     return actions;
 }
 
-@end
-
-
-@implementation MYPopoverPresentationContext
 @end
